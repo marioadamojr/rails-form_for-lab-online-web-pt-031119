@@ -1,19 +1,19 @@
 class SchoolClassesController < ApplicationController
 
   def index
-    @coupons = Coupon.all
+    @school_classes = SchoolClass.all
   end
 
   def show
-    @coupon = Coupon.find(params[:id])
+    @school_class = SchoolClass.find(params[:id])
   end
 
   def new
   end
 
   def create
-    @post = Post.create(post_params(:title, :room_number))
-    redirect_to post_path(@post)
+    @school_class = SchoolClass.create(post_params(:title, :room_number))
+    redirect_to school_class_path(@school_class)
   end
 
   def update
